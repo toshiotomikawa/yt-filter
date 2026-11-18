@@ -49,6 +49,20 @@ test("parseList trims, drops blanks and duplicates", () => {
   assert.deepEqual(parseList(" GTA VI \r\n\n GTA VI\nfoo "), ["GTA VI", "foo"]);
 });
 
+test("phrases match across joining punctuation", () => {
+  const re = compile(["GTA 6", "Grand Theft Auto VI"]);
+  for (const title of ["GTA-6 trailer", "GTA: 6", "GTA:6", "GTA - 6", "GTA_6", "GTA/6", "GTA–6", "Grand Theft Auto: VI"]) {
+    assert.ok(matches(re, title), title);
+  }
+  assert.ok(!matches(re, "GTA-60fps"));
+});
+
+test("invisible format characters do not hide a match", () => {
+  const re = compile(["GTA VI"]);
+  assert.ok(matches(re, "GT​A VI"));
+  assert.ok(matches(re, "GTA­ VI"));
+});
+
 test("normalize folds full-width characters", () => {
   assert.equal(normalize("ＧＴＡ６"), "gta6");
 });
