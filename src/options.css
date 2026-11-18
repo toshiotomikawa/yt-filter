@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#ffffff, #1b1b1f);
+  --text: light-dark(#1b1b1f, #ececf1);
+  --muted: light-dark(#5e5e66, #a8a8b3);
+  --border: light-dark(#c7c7cf, #46464f);
+  --accent: light-dark(#c4161c, #ff5a5f);
+  --on-accent: light-dark(#ffffff, #1b1b1f);
+  --radius: 8px;
+  --gap: 12px;
+  font: 16px/1.5 system-ui, sans-serif;
+}
+body { margin: 0; background: var(--bg); color: var(--text); }
+main { display: grid; gap: var(--gap); padding: 16px; max-width: 560px; }
+label { font-weight: 600; }
+p { margin: 0; color: var(--muted); }
+textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  resize: vertical;
+}
+.row { display: flex; align-items: center; gap: var(--gap); }
+button {
+  font: inherit;
+  font-weight: 600;
+  min-height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+  cursor: pointer;
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+output { color: var(--muted); }

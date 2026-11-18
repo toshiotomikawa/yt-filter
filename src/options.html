@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>yt-filter</title>
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<main>
+  <label for="words">Hide videos whose titles contain</label>
+  <p id="hint">One word or phrase per line. Case and accents don't matter.</p>
+  <textarea id="words" rows="10" spellcheck="false" aria-describedby="hint"></textarea>
+  <div class="row">
+    <button id="save" type="button">Save</button>
+    <output id="status" aria-live="polite"></output>
+  </div>
+</main>
+<script src="match.js"></script>
+<script src="defaults.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

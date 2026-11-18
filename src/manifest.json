@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "yt-filter",
+  "version": "0.1.0",
+  "description": "Hides YouTube videos whose titles contain words you choose.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "yt-filter@toshiotomikawa.github.io",
+      "strict_min_version": "142.0",
+      "update_url": "https://raw.githubusercontent.com/toshiotomikawa/yt-filter/main/updates.json",
+      "data_collection_permissions": { "required": ["none"] }
+    },
+    "gecko_android": { "strict_min_version": "142.0" }
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+      "js": ["match.js", "defaults.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "options_ui": { "page": "options.html", "open_in_tab": false }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "yt-filter",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test test/",
+    "lint": "web-ext lint --source-dir src --self-hosted"
+  }
+}
