@@ -16,11 +16,11 @@
   // Characters that join a phrase's words: spaces and common title punctuation.
   const SEP = String.raw`[\s\-_:/–—.|•·~()\[\]]+`;
   const SPLIT = new RegExp(String.raw`(?<=[\p{L}\p{N}])${SEP}(?=[\p{L}\p{N}])`, "u");
-  // A zero-width joiner only matters between emoji (it builds 🏳️\u200D🌈); elsewhere it is filler.
-  const ZW = /[\u200B\u200C\u00AD͏\u2060\uFEFF]|(?<![\p{Extended_Pictographic}️])\u200D|\u200D(?!\p{Extended_Pictographic})/gu;
+  // A zero-width joiner only matters between emoji (it builds 🏳\uFE0F\u200D🌈); elsewhere it is filler.
+  const ZW = /[\u200B\u200C\u00AD\u034F\u2060\uFEFF]|(?<![\p{Extended_Pictographic}\uFE0F])\u200D|\u200D(?!\p{Extended_Pictographic})/gu;
   // Raised and circled digits: a number after a letter or digit ("6²", "VI①") is a footnote, otherwise the digit itself.
   const DIGITS = /[²³¹⁰⁴-⁹①-⑳]/g;
-  const SPACES = /[‎‏؜‪-‮⁦-⁩ᅟᅠ\u2800ㅤﾠ]/g;
+  const SPACES = /[\u200E\u200F\u061C\u202A-\u202E\u2066-\u2069\u115F\u1160\u2800\u3164\uFFA0]/g;
   const COMPAT = /[ﬀ-ﬆ！-～₀-ₜⅠ-ⅿⒶ-ⓩ\u{1D400}-\u{1D7FF}]/gu;
   const ENCLOSED = /[\u{1F130}-\u{1F149}\u{1F150}-\u{1F169}\u{1F170}-\u{1F189}]/gu;
 
