@@ -1,0 +1,13 @@
+{
+  "addons": {
+    "yt-filter@toshiotomikawa.github.io": {
+      "updates": [
+        {
+          "update_link": "https://github.com/toshiotomikawa/yt-filter/releases/download/v0.1.1/YT-Filter-0.1.1.xpi",
+          "update_hash": "sha256:b620254c7291c755a80b07ab904c9139431aaa56a2fb149df774837becf55589",
+          "version": "0.1.1"
+        }
+      ]
+    }
+  }
+}
