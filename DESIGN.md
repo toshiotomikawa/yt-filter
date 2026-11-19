@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: yt-filter
+name: YT Filter
 description: Settings page of a Firefox extension that hides YouTube videos by title words.
 colors:
   background: "#ffffff"
